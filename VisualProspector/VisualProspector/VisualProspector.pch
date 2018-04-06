@@ -1,0 +1,33 @@
+//
+//  VisualProspector.pch
+//  VisualProspector
+//
+//  Created by apple on 17/09/17.
+//  Copyright © 2017 apple. All rights reserved.
+//
+
+#ifndef VisualProspector_pch
+#define VisualProspector_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((@"%s [Line %d] ---" fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#define DLog(...)
+#endif
+
+#import "UIFont+CustomFont.h"
+#import <SCLAlertView.h>
+#import "UserDefaultManager.h"
+#import "GlobalViewController.h"
+#import "AppDelegate.h"
+
+#define databasePath  @"CSVDatabase/Database"
+#define mailJsonPath  @"CSVDatabase/MailJson"
+#define mmsJsonPath  @"CSVDatabase/MMSJson"
+
+#define appDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+#define navigationColor [UIColor colorWithRed:0.0/255.0 green:184.0/255.0 blue:255.0/255.0 alpha:1.0]
+#endif /* VisualProspector_pch */
